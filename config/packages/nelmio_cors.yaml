@@ -1,0 +1,10 @@
+nelmio_cors:
+    defaults:
+        origin_regex: true
+        allow_origin: ['%env(CORS_ALLOW_ORIGIN)%']  # Ensure the env variable is set in your .env file
+        allow_methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
+        allow_headers: ['Content-Type', 'Authorization', 'X-Requested-With']
+        expose_headers: ['Link']
+        max_age: 3600
+    paths:
+        '^/': ~  # Change this to your API path prefix (if it's not /api/)
